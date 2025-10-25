@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilshod Vafoev - Portfolio</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <nav class="navbar">
+        <div class="logo-container">
+            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" />
+                <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">DV</text>
+            </svg>
+            <span class="logo-text">Dilshod Vafoev</span>
+        </div>
+        
+        <div class="theme-toggle" id="themeToggle">
+            <div class="toggle-track">
+                <div class="toggle-thumb"></div>
+                <span class="toggle-icon sun">☀️</span>
+                <span class="toggle-icon moon">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Salom, Men <span class="highlight">Dilshod Vafoev</span>
+                </h1>
+                <p class="hero-subtitle">Full Stack Web Developer</p>
+                <p class="hero-description">
+                    Backend va Frontend texnologiyalari bo'yicha 2 yildan beri web dasturlash bilan shug'ullanaman
+                </p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary">Batafsil</a>
+                    <a href="#contact" class="btn btn-secondary">Bog'lanish</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="95" fill="url(#avatarGradient)" />
+                        <text x="100" y="130" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">DV</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title">Men Haqimda</h2>
+            <div class="about-content">
+                <div class="info-card">
+                    <div class="info-icon">👤</div>
+                    <h3>Ism Familiya</h3>
+                    <p>Dilshod Vafoev</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📅</div>
+                    <h3>Tug'ilgan Yil</h3>
+                    <p>2007</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">💻</div>
+                    <h3>Tajriba</h3>
+                    <p>2 yil</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🚀</div>
+                    <h3>Mutaxassislik</h3>
+                    <p>Backend & Frontend</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">Ko'nikmalar</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend</h3>
+                    <p>Server-side Development</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile & Desktop</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Problem Solving</h3>
+                    <p>Debugging & Optimization</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Bog'lanish</h2>
+            <div class="contact-content">
+                <p>Agar birgalikda ishlashni xohlasangiz yoki savollaringiz bo'lsa, menga xabar yuboring!</p>
+                <div class="contact-info">
+                    <a href="mailto:kingpubgm71@gmail.com" class="contact-link">
+                        <span class="contact-icon">✉️</span>
+                        kingpubgm71@gmail.com
+                    </a>
+                    <a href="tel:+998919155048" class="contact-link">
+                        <span class="contact-icon">📱</span>
+                        +998 91 915 50-48
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>
