@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Shaxsiy Blogim</title>
+    <style>
+        /* Umumiy stillar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #e53e3e;
+            --light-color: #f7fafc;
+            --text-color: #2d3748;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header qismi */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero qismi */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Asosiy kontent */
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        /* BMW bo'limi */
+        .bmw-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .bmw-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .bmw-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bmw-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .bmw-card h3 {
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        /* Texnologiyalar bo'limi */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tech-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Taomlar bo'limi */
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .food-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .food-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .food-card h3 {
+            padding: 0.8rem;
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Musiqa bo'limi */
+        .music-player {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .track {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .track:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .track:last-child {
+            border-bottom: none;
+        }
+        
+        .track img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        
+        /* Oilaviy bo'lim */
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .family-member {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .family-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+            border: 3px solid var(--primary-color);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .about-me {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .about-me img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .location, .education, .contact {
+            margin-bottom: 2rem;
+        }
+        
+        .location h3, .education h3, .contact h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .location h3 i, .education h3 i, .contact h3 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+        
+        .contact-item:hover {
+            background-color: #e2e8f0;
+        }
+        
+        .contact-item i {
+            width: 30px;
+            color: var(--primary-color);
+        }
+        
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive dizayn */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header qismi -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-blog"></i>
+                Mening Blogim
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#bmw">BMW</a></li>
+                    <li><a href="#tech">Texnologiyalar</a></li>
+                    <li><a href="#food">Taomlar</a></li>
+                    <li><a href="#music">Musiqa</a></li>
+                    <li><a href="#family">Oilam</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero qismi -->
+    <section class="hero">
+        <div class="container">
+            <h1>Xush kelibsiz, mening shaxsiy blogimga!</h1>
+            <p>Bu yerda men o'zim haqimda, qiziqishlarim va hayotim haqida hikoya qilaman</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <main>
+            <!-- Asosiy kontent -->
+            <div class="main-content">
+                <!-- BMW bo'limi -->
+                <section id="bmw" class="content-section">
+                    <h2><i class="fas fa-car"></i> BMW Muhabbati</h2>
+                    <p>Men BMW mashinalarini juda yoqtiraman. Uning dizayni, ishlashi va innovatsiyalari meni hayratda qoldiradi. Quyida mening sevimli BMW modellarim:</p>
+                    
+                    <div class="bmw-gallery">
+                        <div class="bmw-card">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BMW M4">
+                            <h3>BMW M4</h3>
+                        </div>
+                        <div class="bmw-card">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BMW X6">
+                            <h3>BMW X6</h3>
+                        </div>
+                        <div class="bmw-card">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BMW i8">
+                            <h3>BMW i8</h3>
+                        </div>
+                        <div class="bmw-card">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BMW 7 Series">
+                            <h3>BMW 7 Series</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Texnologiyalar bo'limi -->
+                <section id="tech" class="content-section">
+                    <h2><i class="fas fa-laptop-code"></i> O'rganayotgan Texnologiyalarim</h2>
+                    <p>Hozirda men Web-dizayn, Front-end, HTML, CSS va JavaScriptni o'rganyapman. Bu texnologiyalar veb-saytlar va veb-ilovalarni yaratishda asosiy hisoblanadi.</p>
+                    
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML</h3>
+                            <p>Veb-sahifalarning tuzilishini yaratish</p>
+                        </div>
+                        <div class="tech-card">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS</h3>
+                            <p>Veb-sahifalarni stilizatsiya qilish</p>
+                        </div>
+                        <div class="tech-card">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p>Veb-sahifalarga interaktivlik qo'shish</p>
+                        </div>
+                        <div class="tech-card">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>Web Dizayn</h3>
+                            <p>Zamonaviy va foydalanuvchilar uchun qulay interfeyslar yaratish</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Taomlar bo'limi -->
+                <section id="food" class="content-section">
+                    <h2><i class="fas fa-utensils"></i> Mening Sevimli Milliy Taomlarim</h2>
+                    <p>Men yoqtiradigan milliy taomlar:</p>
+                    
+                    <div class="food-gallery">
+                        <div class="food-card">
+                            <img src="osh-plov.jpg" alt="Osh">
+                            <h3>Osh</h3>
+                        </div>
+                        <div class="food-card">
+                            <img src="manti.jpg" alt="Manti">
+                            <h3>Manti</h3>
+                        </div>
+                        <div class="food-card">
+                            <img src="somsa.jpg" alt="Somsa">
+                            <h3>Somsa</h3>
+                        </div>
+                        <div class="food-card">
+                            <img src="lagmon.jpg" alt="Lag'mon">
+                            <h3>Lag'mon</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Musiqa bo'limi -->
+                <section id="music" class="content-section">
+                    <h2><i class="fas fa-music"></i> Sevimli Musiqalarim</h2>
+                    <p>Men Aslweynni musiqalarini juda yoqtiraman. Uning musiqalari menga energiya va ilhom beradi.</p>
+                    
+                    <div class="music-player">
+                        <div class="track">
+                            <img src="aslweyn1.jpg" alt="Faded">
+                            <div>
+                                <h4>Aslweyn</h4>
+                                <p>Farzin</p>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <img src="aslweyn2.jpg" alt="Alone">
+                            <div>
+                                <h4>Aslweyn</h4>
+                                <p>Melis</p>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <img src="aslweyn3.png" alt="The Spectre">
+                            <div>
+                                <h4>Aslewyn</h4>
+                                <p>Memon</p>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <img src="aslweyn4.jpg" alt="On My Way">
+                            <div>
+                                <h4>Aslewyn</h4>
+                                <p>Oldosl 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Oilaviy bo'lim -->
+                <section id="family" class="content-section">
+                    <h2><i class="fas fa-home"></i> Mening Oilam</h2>
+                    <p>Bizning oilada 5 kishimiz: ota, ona, men va mening 2 ta ukam. Oilam mening hayotimdagi eng muhim narsa.</p>
+                    
+                    <div class="family-grid">
+                        <div class="family-member">
+                            <img src="" alt="Otam">
+                            <h3>Otam</h3>
+                            <p>Oilamizning boshlig'i</p>
+                        </div>
+                        <div class="family-member">
+                            <img src="" alt="Onam">
+                            <h3>Onam</h3>
+                            <p>Oilamizning mehribon yuraği</p>
+                        </div>
+                        <div class="family-member">
+                            <img src="Artur.jpg" alt="Men">
+                            <h3>Men</h3>
+                            <p>Katta o'g'il</p>
+                        </div>
+                        <div class="family-member">
+                            <img src="" alt="Ukam 1">
+                            <h3>Ukam 1</h3>
+                            <p>O'rta ukam</p>
+                        </div>
+                        <div class="family-member">
+                            <img src="" alt="Ukam 2">
+                            <h3>Ukam 2</h3>
+                            <p>Kichik ukam</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="about-me">
+                    <img src="Artur.jpg" alt="Mening rasmi">
+                    <h2>Men haqimda</h2>
+                    <p>Men Xiva shahrida yashaydigan yosh dasturchiman. BMW mashinalari, musiqa, milliy taomlar va sayohat qilishni yaxshi ko'raman.</p>
+                </div>
+                
+                <div class="location">
+                    <h3><i class="fas fa-map-marker-alt"></i> Yashash joyim</h3>
+                    <p>Xorazm viloyati, Xiva shahri</p>
+                    <p>Xiva - boy tarix va madaniyatga ega qadimiy shahar</p>
+                </div>
+                
+                <div class="education">
+                    <h3><i class="fas fa-graduation-cap"></i> Ta'lim olish joyim</h3>
+                    <p>Xiva shahar 2-son IDUM</p>
+                    <p>Web-dizayn va dasturlash yo'nalishida o'qiyman</p>
+                </div>
+                
+                <!-- Yangi qo'shilgan "Men bilan bog'lanish" bo'limi -->
+                <div id="contact" class="contact">
+                    <h3><i class="fas fa-phone-alt"></i> Men bilan bog'lanish</h3>
+                    <p>Men bilan quyidagi kontaktlar orqali bog'lanishingiz mumkin:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Telefon: <a href="tel:+998901234567">+998 91-999-63-93</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram: <a href="https://t.me/zarifboev1" target="_blank">@zarifboev1</a></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interests">
+                    <h3><i class="fas fa-heart"></i> Qiziqishlarim</h3>
+                    <ul>
+                        <li>Sayohat qilish</li>
+                        <li>Ko'p pul topish</li>
+                        <li>Ota-onani hurmat qilib, ularni sayr qildirish</li>
+                        <li>Yangi texnologiyalarni o'rganish</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mening Shaxsiy Blogim. Barcha huquqlar himoyalangan.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/zarifboev1" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript kodlari
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll effekti
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Karta animatsiyalari
+            const cards = document.querySelectorAll('.bmw-card, .tech-card, .food-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Musiqa ijrochisi simulyatsiyasi
+            const tracks = document.querySelectorAll('.track');
+            
+            tracks.forEach(track => {
+                track.addEventListener('click', function() {
+                    const songTitle = this.querySelector('h4').textContent;
+                    alert(`"${songTitle}" qo'shig'i ijro etilmoqda...`);
+                });
+            });
+            
+            // Kontakt elementlariga hover effekti
+            const contactItems = document.querySelectorAll('.contact-item');
+            
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#e2e8f0';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+            
+            // Sayt yuklanganida xabar
+            setTimeout(() => {
+                console.log("Sayt muvaffaqiyatli yuklandi! Xush kelibsiz!");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
