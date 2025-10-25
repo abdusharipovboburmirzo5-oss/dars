@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <meta name="description" content="15 yosh, 2 yillik tajriba — Frontend / Backend Web Developer portfolio" />
+  <style>
+    :root{
+      --bg:#0f1724; /* kechgi default */
+      --card:#0b1220;
+      --text:#e6eef8;
+      --muted:#9fb0c8;
+      --accent:#f59e0b; /* oltin kabi */
+      --glass: rgba(255,255,255,0.03);
+    }
+    [data-theme='day']{
+      --bg: #f5f9ff;
+      --card:#ffffff;
+      --text:#0b2136;
+      --muted:#475e75;
+      --accent:#0b78f6;
+      --glass: rgba(0,0,0,0.04);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg), #08101a 120%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      padding:32px;
+    }
+    .container{max-width:1000px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .logo{
+      display:flex;align-items:center;gap:12px;cursor:pointer;
+      padding:8px 12px;border-radius:10px;background:var(--glass);backdrop-filter:blur(6px);
+    }
+    .logo .mark{font-weight:800;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#ffd27a);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:20px}
+    .logo small{display:block;font-size:11px;color:var(--muted);margin-top:-4px}
+
+    .controls{display:flex;align-items:center;gap:12px}
+    .btn{border:0;padding:8px 12px;border-radius:8px;background:var(--card);color:var(--text);cursor:pointer}
+    .toggle{display:flex;align-items:center;gap:8px}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:24px}
+
+    /* About card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.5);}
+    .profile{display:flex;gap:16px;align-items:center}
+    .avatar{width:88px;height:88px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#ffb86b);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:#072033}
+    .info h1{margin:0;font-size:20px}
+    .info p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    .badges{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .badge{padding:6px 10px;border-radius:999px;background:var(--card);font-size:13px;color:var(--muted)}
+
+    /* Skills */
+    .skills{margin-top:14px}
+    .skill{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,0.02)}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+    .project{padding:12px;border-radius:10px;background:var(--card)}
+    .project h4{margin:0 0 8px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Right column */
+    .right .card + .card{margin-top:16px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input, textarea, select{width:100%;padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:var(--text)}
+    textarea{min-height:120px}
+    .submit{margin-top:10px;background:linear-gradient(90deg,var(--accent),#ffd27a);border:0;color:#072033;font-weight:700}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media(max-width:920px){main{grid-template-columns:1fr} .projects-grid{grid-template-columns:1fr} .right{order:2}}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="container">
+    <header>
+      <div class="logo" id="logoBtn" title="XAA — bosish mumkin">
+        <div class="mark">XAA</div>
+        <div>
+          <strong>Alisher</strong>
+          <small>Frontend / Backend</small>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="toggle">
+          <button class="btn" id="dayBtn" aria-pressed="false">Kunduz</button>
+          <button class="btn" id="nightBtn" aria-pressed="true">Kechgi</button>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <div class="profile">
+            <div class="avatar">XAA</div>
+            <div class="info">
+              <h1>Alisher Xushnudov — Web Developer</h1>
+              <p>Yosh: <strong>15</strong> · Tajriba: <strong>2 yil</strong> · Ixtisoslashuv: Frontend / Backend</p>
+              <div class="badges">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Python</span>
+                <span class="badge">Node / Django</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills">
+            <h3>Qisqacha bio</h3>
+            <p style="color:var(--muted)">Men 15 yoshdaman, 2 yillik web dasturlash tajribam bor. Frontend va backend boyicha loyihalar yasayman.</p>
+
+            <h3 style="margin-top:12px">Skillar</h3>
+            <div class="skill"> <span>HTML & CSS</span><span>80%</span></div>
+            <div class="skill"> <span>JavaScript</span><span>40%</span></div>
+            <div class="skill"> <span>Python</span><span>90%</span></div>
+            <div class="skill"> <span>Backend (Django/Node)</span><span>60%</span></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3> loyihalarim</h3>
+          <div class="projects-grid" id="projects">
+            <div class="project">
+              <h4>1. Kafe buyurtma veb</h4>
+              <p>Frontend + Django backend. Mijoz va oshpaz uchun alohida sahifalar, buyurtma holati.</p>
+            </div>
+            <div class="project">
+              <h4>2. Nitro UZ — o'yin demo</h4>
+              <p>HTML/CSS/JS bilan yaratilgan oddiy 2D o'yin demo, sozlamalar va loglar bilan.</p>
+            </div>
+            <div class="project">
+              <h4>3. ShopBanner.uz — banner yaratuvchi</h4>
+              <p>Onlayn banner generator, rasm yuklash va matn joylash funksiyalari.</p>
+            </div>
+            <div class="project">
+              <h4>4. Portfolio sahifasi</h4>
+              <p>Hozir ko'rayotgan sahifa — responsive, kunduz/kechgi rejim bilan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <strong>Kontaktlar:</strong>
+          <a href="https://t.me/@Xushnudov_1" id="tgLink" style="text-decoration:none;color:var(--text);background:var(--card);padding:8px 10px;border-radius:8px">📲 Telegram: <span id="tgHandle">@Xushnudov_1</span></a>
+          <a href="https://instagram.com/__alisher.11__" id="instaLink" style="text-decoration:none;color:var(--text);background:var(--card);padding:8px 10px;border-radius:8px">📸 Instagram: <span id="instaHandle">@__alisher.11__</span></a>
+          <a href="tel:+998990876121" id="phoneLink" style="text-decoration:none;color:var(--text);background:var(--card);padding:8px 10px;border-radius:8px">📞 Tel: <span id="phoneNumber">+9989990876121</span></a>
+        </div>
+        <div style="color:var(--muted);font-size:13px">© <span id="year"></span> Alisher — Web Developer · Frontend/Backend</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const body = document.body;
+    const dayBtn = document.getElementById('dayBtn');
+    const nightBtn = document.getElementById('nightBtn');
+    const logoBtn = document.getElementById('logoBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    function setTheme(theme){
+      if(theme === 'day'){
+        body.setAttribute('data-theme','day');
+        dayBtn.setAttribute('aria-pressed','true');
+        nightBtn.setAttribute('aria-pressed','false');
+      } else {
+        body.setAttribute('data-theme','dark');
+        dayBtn.setAttribute('aria-pressed','false');
+        nightBtn.setAttribute('aria-pressed','true');
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    // Load saved theme
+    const saved = localStorage.getItem('theme') || 'dark';
+    setTheme(saved);
+
+    dayBtn.addEventListener('click', () => setTheme('day'));
+    nightBtn.addEventListener('click', () => setTheme('dark'));
+
+    // Logo fun: click animatsiya + qisqacha popup
+    logoBtn.addEventListener('click', () => {
+      logoBtn.animate([
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.08)' },
+        { transform: 'scale(1)' }
+      ], { duration: 400 });
+      // kichik xabar
+      const tip = document.createElement('div');
+      tip.textContent = 'XAA — bosildi!';
+      tip.style.position = 'fixed';
+      tip.style.left = '50%';
+      tip.style.top = '20px';
+      tip.style.transform = 'translateX(-50%)';
+      tip.style.padding = '8px 12px';
+      tip.style.borderRadius = '8px';
+      tip.style.background = 'var(--card)';
+      tip.style.color = 'var(--text)';
+      tip.style.boxShadow = '0 6px 18px rgba(0,0,0,0.3)';
+      document.body.appendChild(tip);
+      setTimeout(()=> tip.remove(),1200);
+    });
+
+    // Contact form (frontend demo)
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      alert(`${name ? name : 'Foydalanuvchi'}, xabaringiz qabul qilindi! (demo)`);
+      e.target.reset();
+    });
+
+    // Download HTML as file
+    downloadBtn.addEventListener('click', ()=>{
+      const html = '<!doctype html>' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'portfolio_xaa.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // Export PDF simple flow (uses browser print dialog)
+    document.getElementById('exportPDF').addEventListener('click', ()=>{
+      window.print();
+    });
+
+    // Edit button - opens a prompt to change the header name quickly
+    document.getElementById('editBtn').addEventListener('click', ()=>{
+      const newName = prompt('Sarlavha uchun yangi ism kiriting:', 'Alisher XAA');
+      if(newName) document.querySelector('.info h1').textContent = newName + ' — Web Developer';
+    });
+  </script>
+</body>
+</html>
